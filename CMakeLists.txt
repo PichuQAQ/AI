@@ -4,6 +4,9 @@ project(aten_codegen_example LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Put the compiled extension into the Python package so imports work without extra steps.
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/python/aten_codegen_example)
+
 include(FetchContent)
 FetchContent_Declare(
   pybind11

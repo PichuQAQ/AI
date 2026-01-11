@@ -28,11 +28,13 @@ cmake -S . -B build
 cmake --build build
 ```
 
-After building, copy the compiled `_ops` module into the Python package (or point
-`PYTHONPATH` at the build output):
+The CMake build drops the compiled `_ops` module directly into
+`python/aten_codegen_example`, so Python can import it without additional steps.
+
+## Running the demo
 
 ```bash
-export PYTHONPATH="$(pwd)/build:$(pwd)/python"
+export PYTHONPATH="$(pwd)/python"
 python3 examples/demo.py
 ```
 
