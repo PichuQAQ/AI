@@ -1,0 +1,17 @@
+# Minimal, illustrative subset of ATen's native_functions.yaml format.
+# Each entry feeds codegen to produce C++ bindings + Python stubs.
+- name: add_scalar
+  cpp_name: add_scalar
+  doc: "Add a scalar to every element in a Tensor."
+  args:
+    - {name: self, type: Tensor}
+    - {name: other, type: float}
+  returns: Tensor
+
+- name: mul_scalar
+  cpp_name: mul_scalar
+  doc: "Multiply every element in a Tensor by a scalar."
+  args:
+    - {name: self, type: Tensor}
+    - {name: other, type: float}
+  returns: Tensor
